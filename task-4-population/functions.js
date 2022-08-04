@@ -7,9 +7,9 @@ export const calcPopulation = async (region) => {
     return Math.round(population / 10000) / 100
 }
 
-export const calcArea = async (region) => {
+export const calcArea = async (country) => {
     let area = 0
-    const dataArrayRequest = await axios.get(region)
+    const dataArrayRequest = await axios.get(country)
     dataArrayRequest.data.map(e => area += e.area)
     return `${area} km2`;
 }
