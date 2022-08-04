@@ -1,4 +1,3 @@
-
 export const apiEndpoints = {
     WORLD : 'https://restcountries.com/v3.1/all',
     EUROPEAN_UNION : 'https://restcountries.com/v2/regionalbloc/eu',
