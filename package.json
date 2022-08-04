@@ -1,0 +1,14 @@
+{
+  "name": "total-population-api-axios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "task-123": "node ./task-123-arrays/task-123.js",
+    "task-4": "node ./task-4-population/task-4.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
