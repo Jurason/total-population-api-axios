@@ -2,8 +2,9 @@ import axios from "axios";
 
 export const calcPopulation = async (region) => {
     const dataArrayRequest = await axios.get(region)
-    const population = dataArrayRequest.data.reduce((acc, curr) => {
-        if(curr.population) return acc + curr.population
+    const population = dataArrayRequest.data.reduce((acc, el) => {
+        const { population } = el
+        if(population) acc += population
         return acc
     }, 0)
     return Math.round(population / 10000) / 100
@@ -11,11 +12,12 @@ export const calcPopulation = async (region) => {
 
 export const calcArea = async (country) => {
     const dataArrayRequest = await axios.get(country)
-    const area = dataArrayRequest.data.reduce((acc, curr) => {
-        if(curr.area) return acc + curr.area
+    const area = dataArrayRequest.data.reduce((acc, el) => {
+        const { area } = el
+        if(area) acc += area
         return acc
     }, 0)
-    return `${area} km2`;
+    return area;
 }
 
 export const countOfBorderCountries = async (country) => {

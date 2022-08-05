@@ -18,8 +18,8 @@ console.log('*************************************CALCULATE AREA****************
 const swedenArea = await calcArea(apiEndpoints.SWEDEN)
 const ukraineArea = await calcArea(apiEndpoints.UKRAINE)
 
-console.log(`Area of Sweden is ${swedenArea}`);
-console.log(`Area of Ukraine is ${ukraineArea}, yet`);
+console.log(`Area of Sweden is ${swedenArea} km2`);
+console.log(`Area of Ukraine is ${ukraineArea} km2, yet`);
 
 console.log('*************************************CALCULATE BORDER COUNTRIES******************************')
 

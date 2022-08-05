@@ -13,7 +13,7 @@ const sumOfNumbers1 = arr => {
     arr.forEach(e => sum += e)
     return sum
 }
-const sumOfNumbers2 = arr => arr.reduce((sum, currNum) => sum + currNum, 0)
+const sumOfNumbers2 = arr => arr.reduce((sum, el) => sum + el, 0)
 
 // TASK #2
 // Function which calculate count for specified position
@@ -34,8 +34,8 @@ const countOfFruit = (arr, fruit) => {
     return count
 }
 const countOfFruit1 = (arr, fruit) => {
-    return arr.reduce((acc, curr) => {
-        const {name, count} = curr
+    return arr.reduce((acc, el) => {
+        const {name, count} = el
         if(name === fruit) return acc + count
         return acc
     }, 0)
@@ -59,8 +59,8 @@ const countUnique1 = arr => {
     return result
 }
 const countUnique2 = arr => {
-    return arr.reduce((acc, curr) => {
-        const { name, count } = curr
+    return arr.reduce((acc, el) => {
+        const { name, count } = el
         acc[name] = acc[name] + count || count
         return acc
     }, {})
@@ -68,7 +68,7 @@ const countUnique2 = arr => {
 
 // Print results
 
-const printResults = () => {
+const results = () => {
     const uniqueNames = Object.keys(countUnique2(fruits))
     console.log('Task #1 Sum of the array numbers')
     console.log('Test array [0, 1, 14, 88, -100, 11]')
@@ -80,4 +80,4 @@ const printResults = () => {
     console.log('Task #3 Function which calculate count for unique position into array')
     console.log(countUnique2(fruits))
 }
-printResults()
+results()
