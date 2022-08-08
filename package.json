@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "task-123": "node ./task-123-arrays/task-123.js",
-    "task-4": "node ./task-4-population/task-4.js"
+    "task-4": "node ./task-4-population/task-4.js",
+    "task-5": "node task-5-converter-string-to-html-markup/task-5.js"
   },
   "type": "module",
   "dependencies": {
