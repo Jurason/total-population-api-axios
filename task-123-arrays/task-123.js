@@ -1,7 +1,7 @@
 // TASK #1
 // "Sum of the numbers in array" function
 
-const testArray = [0, 1, 14, 88, -100, 11]
+const testArray = [0, 8, undefined, 88, -100, 11]
 
 const sumOfNumbers = arr => {
     let sum = 0
@@ -13,7 +13,11 @@ const sumOfNumbers1 = arr => {
     arr.forEach(e => sum += e)
     return sum
 }
-const sumOfNumbers2 = arr => arr.reduce((sum, el) => sum + el, 0)
+const sumOfNumbers2 = arr => arr.reduce((sum, el) => {
+    el ??= 0
+    sum += el
+    return sum
+}, 0)
 
 // TASK #2
 // Function which calculate count for specified position
@@ -40,6 +44,8 @@ const countOfFruit1 = (arr, fruit) => {
         return acc
     }, 0)
 }
+
+
 
 // TASK #3
 // Function which calculate count for unique position into array
@@ -71,7 +77,7 @@ const countUnique2 = arr => {
 const results = () => {
     const uniqueNames = Object.keys(countUnique2(fruits))
     console.log('Task #1 Sum of the array numbers')
-    console.log('Test array [0, 1, 14, 88, -100, 11]')
+    console.log('Test array [0, 8, undefined, 88, -100, 11]')
     console.log(sumOfNumbers2(testArray))
     console.log('**************************************************')
     console.log('Task #2 Function which calculate count for specified position')

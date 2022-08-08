@@ -12,17 +12,22 @@ export const calcPopulation = async (region) => {
 
 export const calcArea = async (country) => {
     const dataArrayRequest = await axios.get(country)
-    const area = dataArrayRequest.data.reduce((acc, el) => {
-        const { area } = el
-        if(area) acc += area
+    return dataArrayRequest.data.reduce((acc, el) => {
+        const {area} = el
+        if (area) acc += area
         return acc
-    }, 0)
-    return area;
+    }, 0);
 }
 
-export const countOfBorderCountries = async (country) => {
+export const borderCountries = async (country) => {
     const dataArrayRequest = await axios.get(country)
-    return dataArrayRequest.data[0].borders.length
+    return dataArrayRequest.data.reduce((acc, el) => {
+        if (el['borders']) {
+            acc.count += el['borders'].length
+            acc.countries += el['borders']
+        }
+        return acc
+    }, {countries: 0, count: 0})
 }
 
 export const showData = async (country) => {

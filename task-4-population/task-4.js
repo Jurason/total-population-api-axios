@@ -1,5 +1,5 @@
 import { apiEndpoints } from "./api-endpoints.js";
-import { calcPopulation, calcArea, countOfBorderCountries} from "./functions.js";
+import { calcPopulation, calcArea, borderCountries} from "./functions.js";
 
 console.log('*************************************CALCULATE POPULATION*************************************')
 
@@ -23,6 +23,6 @@ console.log(`Area of Ukraine is ${ukraineArea} km2, yet`);
 
 console.log('*************************************CALCULATE BORDER COUNTRIES******************************')
 
-const pakistanBorders = await countOfBorderCountries(apiEndpoints.PAKISTAN)
+const pakistanBorders = await borderCountries(apiEndpoints.PAKISTAN)
 
-console.log(`Pakistan has ${pakistanBorders} border countries`);
+console.log(`Pakistan has ${pakistanBorders.count} border countries: ${pakistanBorders.countries}`);
