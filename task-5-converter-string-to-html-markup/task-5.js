@@ -20,19 +20,6 @@ function converterStringToHtmlMarkup(arr){
     return `<${arr[0]}>` + resultString + `</${arr[0]}>`
 }
 
-// function converter(arr){
-//
-//     function replacer(el){
-//         return el.replaceAll('<', '&lt;').replaceAll('>', '&gt;')
-//     }
-//
-//     return `<${arr[0]}>` + arr.splice(1).reduce((acc, el) => {
-//             Array.isArray(el) ? acc += `<${el[0]}>` + el.splice(1).join('') + `</${el[0]}>` : acc += replacer(el)
-//             return acc
-//         }, '')
-//         + `</${arr[0]}>`
-// }
-
 console.log('[div] =>', converterStringToHtmlMarkup(arr1))
 console.log('[h1, Text] =>', converterStringToHtmlMarkup(arr2))
 console.log('[span, More, Text] =>', converterStringToHtmlMarkup(arr3))
